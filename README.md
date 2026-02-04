@@ -1,3 +1,3 @@
-# .github
+# Github
 
-Projet qui contient le README pour l'organisation.
+Repo qui contient le README pour l'organisation.
