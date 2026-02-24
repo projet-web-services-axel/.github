@@ -26,7 +26,7 @@ Utilisera du GraphQL avec un système d'authentification.
 
 ## Message broker
 
-Avoir de la programmtion évènementielle entre les micro services.  
+Avoir de la programmation évènementielle entre les micro services.  
 Utilisera Redis Pub/Sub.
 
 ## Base de données
