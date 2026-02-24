@@ -4,13 +4,13 @@ Projet par Axel Senecal.
 
 ## TODO List
 
-- [ ] Site web
-- [ ] API Gateway
+- [x] Site web
+- [x] API Gateway
 - [ ] Message broker
 - [ ] Base de données
-- [ ] Service tournoi
+- [x] Service tournoi
 - [ ] Service notification
-- [ ] Service chat
+- [x] Service chat
 - [ ] Service utilisateur
 - [ ] Dockeriser l'ensemble du projet
 
