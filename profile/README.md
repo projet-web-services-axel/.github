@@ -64,12 +64,12 @@ L'ensemble du projet doit être exécutable via un docker compose.
 
 ## Contraintes techniques obligatoires
 
-[x] Architecture adaptée
-[x] API Gateway en GraphQL
-[x] Communication inter-service via gRPC &rarr; tournoi / utilisateur
-[ ] Redis cache
-[ ] Redis Pub/Sub
-[x] WebSocket &rarr; chat
-[ ] SSE &rarr; notification
-[x] Frontend moderne &rarr; NextJS
-[ ] Dockerisation complète
+- [x] Architecture adaptée
+- [x] API Gateway en GraphQL
+- [x] Communication inter-service via gRPC &rarr; tournoi / utilisateur
+- [ ] Redis cache
+- [ ] Redis Pub/Sub
+- [x] WebSocket &rarr; chat
+- [ ] SSE &rarr; notification
+- [x] Frontend moderne &rarr; NextJS
+- [ ] Dockerisation complète
