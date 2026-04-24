@@ -7,11 +7,11 @@ Projet par Axel Senecal.
 - [x] Site web
 - [x] API Gateway
 - [ ] Message broker
-- [ ] Base de données
+- [x] Base de données
 - [x] Service tournoi
 - [ ] Service notification
 - [x] Service chat
-- [ ] Service utilisateur
+- [x] Service utilisateur
 - [ ] Dockeriser l'ensemble du projet
 
 ## Services
@@ -64,12 +64,12 @@ L'ensemble du projet doit être exécutable via un docker compose.
 
 ## Contraintes techniques obligatoires
 
-1. [x] Architecture adaptée
-2. [x] API Gateway en GraphQL
-3. [ ] Communication inter-service via gRPC
-4. [ ] Redis cache
-5. [ ] Redis Pub/Sub
-6. [x] WebSocket &rarr; chat
-7. [ ] SSE &rarr; notification
-8. [x] Frontend moderne &rarr; NextJS
-9. [ ] Dockerisation complète
+[x] Architecture adaptée
+[x] API Gateway en GraphQL
+[x] Communication inter-service via gRPC &rarr; tournoi / utilisateur
+[ ] Redis cache
+[ ] Redis Pub/Sub
+[x] WebSocket &rarr; chat
+[ ] SSE &rarr; notification
+[x] Frontend moderne &rarr; NextJS
+[ ] Dockerisation complète
