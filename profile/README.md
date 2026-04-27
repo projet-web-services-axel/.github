@@ -60,7 +60,7 @@ L'ensemble du projet doit être exécutable via un docker compose.
 
 ## Architecture
 
-![Architecture](mermaid-diagram.svg)
+![Architecture](diagram.png)
 
 ## Contraintes techniques obligatoires
 
