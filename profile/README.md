@@ -60,7 +60,25 @@ L'ensemble du projet doit être exécutable via un docker compose.
 
 ## Architecture
 
-![Architecture](diagram.png)
+```mermaid
+flowchart LR
+    W[Website\nNext.js] -->|GraphQL| G[API Gateway\nGo + GraphQL]
+
+    G -->|Request| T[API Tournament + Chat\nGo]
+    G -->|Request| H[API User Historic\nGo]
+
+    W <-->|WebSocket| T
+    N[API Notification\nSSE] -->|SSE stream| W
+
+    T -->|Publish events| RPS[(Redis Pub/Sub)]
+    RPS -->|Subscribe| N
+
+    T -->|Read/Write| PG[(PostgreSQL)]
+    H -->|Read/Write| PG
+    G <-->|Tournament cache| RC[(Redis Cache)]
+
+    T --> |gRPC| H
+```
 
 ## Contraintes techniques obligatoires
 
