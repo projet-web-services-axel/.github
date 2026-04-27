@@ -6,13 +6,12 @@ Projet par Axel Senecal.
 
 - [x] Site web
 - [x] API Gateway
-- [ ] Message broker
+- [x] Message broker
 - [x] Base de données
-- [x] Service tournoi
-- [ ] Service notification
-- [x] Service chat
-- [x] Service utilisateur
-- [ ] Dockeriser l'ensemble du projet
+- [x] Service tournoi & chat
+- [x] Service notification
+- [x] Service historique utilisateur
+- [x] Dockeriser l'ensemble du projet
 
 ## Services
 
@@ -37,19 +36,20 @@ Utilisera Redis Pub/Sub.
 Base de données PostgreSQL pour stocker les données des tournois, utilisateurs, inscriptions, etc.  
 Puis un cache Redis pour les statistiques.
 
-### Service tournoi
+### Service tournoi & chat
 
 Micro services en Golang, API avec Fiber.  
 Depuis un compte organisateur, permettre la création et la gestion des tournois, ainsi que la visualisation du dashboard.  
 Depuis un compte utilisateur, permettre l'inscription aux tournois &rarr; envoie un évènement aux services profil utilisateur et notification.  
-Suivre les places restantes d'un tournoi en temps réel.
+Suivre les places restantes d'un tournoi en temps réel.  
+Utilisation de WebSocket pour avoir un chat dans chaque tournoi.
 
 ### Service notification
 
 Micro services en Golang, utilisera un server-sent events.
 Reçoit un évènement du service tournoi &rarr; envoie des notifications aux joueurs par rapport aux tournois inscrits.  
 
-### Service profil utilisateur
+### Service historique utilisateur
 
 Historique des tournois inscrits avec les résultats pour ceux terminés.  
 Reçoit un évènement du service tournoi.
@@ -60,16 +60,15 @@ L'ensemble du projet doit être exécutable via un docker compose.
 
 ## Architecture
 
-![Architecture](web_services_architecture.svg)
+![Architecture](mermaid-diagram.svg)
 
 ## Contraintes techniques obligatoires
 
-- [x] Architecture adaptée
 - [x] API Gateway en GraphQL
 - [x] Communication inter-service via gRPC &rarr; tournoi / utilisateur
-- [ ] Redis cache
-- [ ] Redis Pub/Sub
-- [x] WebSocket &rarr; chat
-- [ ] SSE &rarr; notification
+- [x] Redis cache &rarr; gateway (tournois)
+- [x] Redis Pub/Sub &rarr; tournoi vers notification
+- [x] WebSocket &rarr; chat tournoi
+- [x] SSE &rarr; notification vers website
 - [x] Frontend moderne &rarr; NextJS
-- [ ] Dockerisation complète
+- [X] Dockerisation complète
