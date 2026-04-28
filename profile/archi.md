@@ -35,3 +35,66 @@ Lors de l'inscription à un tournoi, l'information est également envoyé à l'A
 ## BDD
 
 Une base de données PostgreSQL est utilisé pour sa très bonne compatibilité avec Go qui assure des bonnes performances.
+
+### Tournament table
+
+|      Field       |     Type     |
+|:----------------:|:------------:|
+|        id        |     UUID     |
+|      title       | VARCHAR(255) |
+|       game       | VARCHAR(255) |
+|       date       |  TIMESTAMP   |
+|     location     | VARCHAR(255) |
+|   participants   |     INT      |
+| max_participants |     INT      |
+|      prize       | VARCHAR(255) |
+|      status      | VARCHAR(50)  |
+|   description    |     TEXT     |
+|      rules       |    TEXT[]    |
+|   organizer_id   |     UUID     |
+|    created_at    |  TIMESTAMP   |
+|    updated_at    |  TIMESTAMP   |
+
+### User Table
+|   Field    |     Type     |
+|:----------:|:------------:|
+|     id     |     UUID     |
+|    name    | VARCHAR(255) |
+|   email    | VARCHAR(255) |
+|  password  | VARCHAR(255) |
+|    role    | VARCHAR(50)  |
+| created_at |  TIMESTAMP   |
+| updated_at |  TIMESTAMP   |
+
+### Registrations table
+
+|     Field     |    Type     |
+|:-------------:|:-----------:|
+|      id       |    UUID     |
+|    user_id    |    UUID     |
+| tournament_id |    UUID     |
+|    status     | VARCHAR(50) |
+| registered_at |  TIMESTAMP  |
+|  updated_at   |  TIMESTAMP  |
+
+### Messages table
+
+|   Field    |     Type     |
+|:----------:|:------------:|
+|     id     |     UUID     |
+|  user_id   |     UUID     |
+| channel_id | VARCHAR(255) |
+|  content   |     TEXT     |
+| timestamp  |  TIMESTAMP   |
+
+### Notifications table
+
+|   Field   |     Type     |
+|:---------:|:------------:|
+|    id     |     UUID     |
+|  user_id  |     UUID     |
+|   type    | VARCHAR(50)  |
+|   title   | VARCHAR(255) |
+|  message  |     TEXT     |
+|   read    |   BOOLEAN    |
+| timestamp |  TIMESTAMP   |
