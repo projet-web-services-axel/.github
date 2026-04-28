@@ -80,6 +80,8 @@ flowchart LR
     T --> |gRPC| H
 ```
 
+[Détails de l'archi](./archi.md)
+
 ## Contraintes techniques obligatoires
 
 - [x] API Gateway en GraphQL
